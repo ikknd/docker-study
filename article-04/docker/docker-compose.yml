@@ -1,0 +1,43 @@
+version: "3.7"
+
+services:
+
+  web:
+    image: nginx:1.17
+    ports:
+      - 80:80
+    volumes:
+      - /var/www/docker-study.loc/article-04/php:/var/www/myapp
+      - /var/www/docker-study.loc/article-04/docker/site.conf:/etc/nginx/conf.d/site.conf
+    depends_on:
+      - php
+      - mariadb
+
+  php:
+    image: php:7.2-fpm
+    volumes:
+      - /var/www/docker-study.loc/article-04/php:/var/www/myapp
+      - /var/www/docker-study.loc/article-04/docker/php.ini:/usr/local/etc/php/php.ini
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb:10.4
+    restart: always
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: qwerty
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 8000:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mariadb
+    depends_on:
+      - mariadb
+
+volumes:
+  mariadb-data:
