@@ -24,8 +24,10 @@ services:
   mariadb:
     image: mariadb:10.4
     restart: always
+    command: "mysqld --init-file /data/application/init.sql"
     volumes:
       - mariadb-data:/var/lib/mysql
+      - ./init.sql:/data/application/init.sql
     environment:
       MYSQL_ROOT_PASSWORD: qwerty
 
