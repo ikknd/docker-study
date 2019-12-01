@@ -18,6 +18,8 @@ services:
       - HTTP_PASSWORD=qwerty
     ports:
       - 8081:8081
+    depends_on:
+      - redis
     
 volumes:
   redis-data:

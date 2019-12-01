@@ -9,6 +9,8 @@ services:
     volumes:
       - /var/www/docker-study.loc/article-03/php:/var/www/myapp
       - /var/www/docker-study.loc/article-03/docker/site.conf:/etc/nginx/conf.d/site.conf
+    depends_on:
+      - php
 
   php:
     image: php:7.2-fpm
