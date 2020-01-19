@@ -7,5 +7,5 @@ services:
     ports:
       - 80:80
     volumes:
-      - /var/www/docker-study.loc/article-02/html:/var/www/myapp
-      - /var/www/docker-study.loc/article-02/docker/site.conf:/etc/nginx/conf.d/site.conf
+      - /var/www/docker-study.loc/recipe-01/html:/var/www/myapp
+      - /var/www/docker-study.loc/recipe-01/docker/site.conf:/etc/nginx/conf.d/site.conf

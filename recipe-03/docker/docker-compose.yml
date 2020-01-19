@@ -7,8 +7,8 @@ services:
     ports:
       - 80:80
     volumes:
-      - /var/www/docker-study.loc/article-04/php:/var/www/myapp
-      - /var/www/docker-study.loc/article-04/docker/site.conf:/etc/nginx/conf.d/site.conf
+      - /var/www/docker-study.loc/recipe-03/php:/var/www/myapp
+      - /var/www/docker-study.loc/recipe-03/docker/site.conf:/etc/nginx/conf.d/site.conf
     depends_on:
       - php
       - mariadb
@@ -16,8 +16,8 @@ services:
   php:
     image: php:7.2-fpm
     volumes:
-      - /var/www/docker-study.loc/article-04/php:/var/www/myapp
-      - /var/www/docker-study.loc/article-04/docker/php.ini:/usr/local/etc/php/php.ini
+      - /var/www/docker-study.loc/recipe-03/php:/var/www/myapp
+      - /var/www/docker-study.loc/recipe-03/docker/php.ini:/usr/local/etc/php/php.ini
     depends_on:
       - mariadb
 
