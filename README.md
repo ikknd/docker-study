@@ -10,4 +10,4 @@
 
 * recipe-05 - PHP Composer usage in docker
 
-* recipe-07 - Environmental variables usage in docker compose
+* recipe-07 - Environment variables usage in docker compose
