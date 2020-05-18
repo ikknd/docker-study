@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+
+  web:
+    image: nginx:1.17
+    ports:
+      - 80:80
+    volumes:
+      - /var/www/docker-study.loc/recipe-09/php:/var/www/myapp
+      - /var/www/docker-study.loc/recipe-09/docker/site.conf:/etc/nginx/conf.d/site.conf
+    depends_on:
+      - php
+
+  php:
+    image: php-xdebug-custom
+    volumes:
+      - /var/www/docker-study.loc/recipe-09/php:/var/www/myapp
+      - /var/www/docker-study.loc/recipe-09/docker/php.ini:/usr/local/etc/php/php.ini
