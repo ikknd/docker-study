@@ -16,4 +16,4 @@
 
 * recipe-08 - How To Extend Docker Compose File - https://hackernoon.com/how-to-extend-docker-compose-file-jc723ypq
 
-* recipe-09 - How to debug PHP container with xdebug and PhpStorm
+* recipe-09 - How to debug PHP container with xdebug and PhpStorm - https://hackernoon.com/how-to-debug-php-container-with-xdebug-and-phpstorm-1b2k3yjo
